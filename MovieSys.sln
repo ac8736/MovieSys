@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieSys.Contracts", "MovieSys.Contracts\MovieSys.Contracts.csproj", "{FF8948C6-EB1A-4D92-9E20-5943FD80B472}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieSys", "MovieSys\MovieSys.csproj", "{92F96273-4398-4871-B7C6-C96B4FC4071A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF8948C6-EB1A-4D92-9E20-5943FD80B472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF8948C6-EB1A-4D92-9E20-5943FD80B472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF8948C6-EB1A-4D92-9E20-5943FD80B472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF8948C6-EB1A-4D92-9E20-5943FD80B472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92F96273-4398-4871-B7C6-C96B4FC4071A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92F96273-4398-4871-B7C6-C96B4FC4071A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92F96273-4398-4871-B7C6-C96B4FC4071A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92F96273-4398-4871-B7C6-C96B4FC4071A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,62 @@
+POST https://localhost:7053/user
+Content-Type: application/json
+
+{
+    "email": "tesgawg@test.com",
+    "username": "test",
+    "password": "test"
+}
+
+###
+
+POST https://localhost:7053/movie
+Content-Type: application/json
+
+{
+    "name": "Avatar2",
+    "director": "James Cameron",
+    "release": "2009-12-18"
+}
+
+###
+
+POST https://localhost:7053/cast
+Content-Type: application/json
+
+{
+    "movieID": "9a2adc60-a772-4495-8290-d39e653a0228",
+    "actor": "Zoea Saldaaana",
+    "role": "Neytiri"
+}
+
+###
+
+POST https://localhost:7053/rate
+Content-Type: application/json
+
+{
+    "movieID": "9a2adc60-a772-4495-8290-d39e653a0228",
+    "userID": "fed66835-da79-43e6-ad26-bca9084c195f",
+    "rating": 5,
+    "comment": "This is a great movie"
+}
+
+###
+POST https://localhost:7053/topic
+Content-Type: application/json
+
+{
+    "movieID": "9a2adc60-a772-4495-8290-d39e653a0228",
+    "topic": "Authorization"
+}
+
+###
+
+POST https://localhost:7053/movie
+Content-Type: application/json
+
+{
+    "name": "Avatar 2",
+    "director": "James Cameron",
+    "release": "2012-12-18"
+}

@@ -1,0 +1,21 @@
+GET https://localhost:7053/User/545c9e77-a17a-4baa-b5fa-8101ea5706ea
+
+###
+GET https://localhost:7053/test
+
+###
+GET https://localhost:7053/movie/aa2adc60-a772-4495-8290-d39e653a0228
+
+###
+GET https://localhost:7053/cast/9a2adc60-a772-4495-8290-d39e653a0228
+###
+GET https://localhost:7053/cast/aa2adc60-a772-4495-8290-d39e653a0228
+
+###
+GET https://localhost:7053/rate/movie/9a2adc60-a772-4495-8290-d39e653a0228
+
+###
+GET https://localhost:7053/rate/user/682671f8-00f1-4155-8416-8b4f3ff97126
+
+###
+GET https://localhost:7053/topic/9a2adc60-a772-4495-8290-d39e653a0228

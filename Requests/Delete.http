@@ -1,0 +1,34 @@
+DELETE https://localhost:7053/cast
+Content-Type: application/json
+
+{
+    "movieId": "9a2adc60-a772-4495-8290-d39e653a0228",
+    "actor": "Sam Worthington",
+    "role": "Jak Sully"
+}
+
+###
+DELETE https://localhost:7053/movie/8f0ebcb1-d401-4e0e-8201-7a4eb28fee06
+
+###
+DELETE https://localhost:7053/rate
+Content-Type: application/json
+
+{
+    "movieID": "9a2adc60-a772-4495-8290-d39e653a0228",
+    "userID": "682671f8-00f1-4155-8416-8b4f3ff97126",
+    "rating": 5,
+    "comment": "This is a great movie"
+}
+
+###
+DELETE https://localhost:7053/topic
+Content-Type: application/json
+
+{
+    "movieID": "9a2adc60-a772-4495-8290-d39e653a0228",
+    "topic": "Fantasy"
+}
+
+###
+DELETE https://localhost:7053/user/54bc9e77-a17a-4baa-b5fa-8101ea5706ea
