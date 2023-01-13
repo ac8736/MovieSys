@@ -1,7 +1,7 @@
 using MovieSys.Models;
 using MovieSys.Contracts.Movie;
 
-namespace MovieSys.Services.Users;
+namespace MovieSys.Services;
 
 public interface IUserService
 {

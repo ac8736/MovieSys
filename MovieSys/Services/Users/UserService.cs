@@ -4,7 +4,7 @@ using MySql.Data.MySqlClient;
 using MovieSys.Contracts.Movie;
 using BC = BCrypt.Net.BCrypt;
 
-namespace MovieSys.Services.Users;
+namespace MovieSys.Services;
 
 public class UserService : IUserService
 {

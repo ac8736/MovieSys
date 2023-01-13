@@ -1,7 +1,7 @@
 using MovieSys.Models;
 using MovieSys.Contracts.Movie;
 
-namespace MovieSys.Services.Rate;
+namespace MovieSys.Services;
 
 public interface IRateService
 {

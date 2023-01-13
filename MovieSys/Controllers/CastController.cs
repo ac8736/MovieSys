@@ -1,9 +1,8 @@
 using MovieSys.Controllers;
-using MovieSys.Services.Cast;
+using MovieSys.Services;
 using Microsoft.AspNetCore.Mvc;
 using MovieSys.Contracts.Movie;
 using MovieSys.Models;
-using MovieSys.Services.Movies;
 
 namespace MovieSys.Contracts;
 

@@ -1,4 +1,4 @@
-using MovieSys.Services.Rate;
+using MovieSys.Services;
 using Microsoft.AspNetCore.Mvc;
 using MovieSys.Contracts.Movie;
 using MovieSys.Models;

@@ -3,7 +3,7 @@ using MovieSys.Database;
 using MovieSys.Models;
 using MySql.Data.MySqlClient;
 
-namespace MovieSys.Services.Topics;
+namespace MovieSys.Services;
 
 public class TopicService : ITopicService
 {

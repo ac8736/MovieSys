@@ -1,8 +1,4 @@
-using MovieSys.Services.Users;
-using MovieSys.Services.Movies;
-using MovieSys.Services.Cast;
-using MovieSys.Services.Rate;
-using MovieSys.Services.Topics;
+using MovieSys.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 {

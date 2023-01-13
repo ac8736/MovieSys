@@ -3,7 +3,7 @@ using MovieSys.Database;
 using MovieSys.Contracts.Movie;
 using MovieSys.Models;
 
-namespace MovieSys.Services.Cast;
+namespace MovieSys.Services;
 
 public class CastService : ICastService
 {

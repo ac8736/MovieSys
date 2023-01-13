@@ -1,5 +1,5 @@
 using MovieSys.Controllers;
-using MovieSys.Services.Topics;
+using MovieSys.Services;
 using Microsoft.AspNetCore.Mvc;
 using MovieSys.Contracts.Movie;
 using MovieSys.Models;

@@ -1,8 +1,9 @@
 using MovieSys.Contracts.Movie;
 using MovieSys.Database;
 using MovieSys.Models;
-using MovieSys.Services.Rate;
 using MySql.Data.MySqlClient;
+
+namespace MovieSys.Services;
 
 public class RateService : IRateService
 {

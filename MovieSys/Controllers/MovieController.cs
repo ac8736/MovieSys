@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MovieSys.Contracts.Movie;
 using MovieSys.Models;
-using MovieSys.Services.Movies;
+using MovieSys.Services;
 
 namespace MovieSys.Controllers;
 

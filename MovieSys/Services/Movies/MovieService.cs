@@ -3,7 +3,7 @@ using MovieSys.Models;
 using MovieSys.Database;
 using MySql.Data.MySqlClient;
 
-namespace MovieSys.Services.Movies;
+namespace MovieSys.Services;
 
 public class MovieService : IMovieService
 {

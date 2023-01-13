@@ -1,7 +1,7 @@
 using MovieSys.Contracts.Movie;
 using MovieSys.Models;
 
-namespace MovieSys.Services.Topics;
+namespace MovieSys.Services;
 
 public interface ITopicService
 {
