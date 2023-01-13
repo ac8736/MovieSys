@@ -44,6 +44,14 @@ jobs:
           mysql user: root
           # MYSQL_PASSWORD - specified superuser password which user is power for created database
           mysql password: password
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install pip package
+        run: pip install pymysql
+      - name: Run Python script
+        run: python .\MySQL\Init.py
       - uses: actions/checkout@v3
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
