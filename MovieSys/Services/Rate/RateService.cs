@@ -12,7 +12,7 @@ public class RateService : IRateService
             throw new Exception("Null Connection String.");
         var dbCon = new DBConnection(connectionString);
         dbCon.Connect();
-        string query = String.Format("INSERT INTO rating VALUES('{0}', '{1}', '{2}', '{3}');", rate.MovieId, rate.UserId, rate.Rate, rate.Comment);
+        string query = $"INSERT INTO rating VALUES('{rate.MovieId}', '{rate.UserId}', '{rate.Rate}', '{rate.Comment}')";
         var cmd = new MySqlCommand(query, dbCon.Connection);
         cmd.ExecuteNonQuery();
         cmd.Dispose();
@@ -26,13 +26,11 @@ public class RateService : IRateService
         List<RatingResponse> result = new();
         var dbCon = new DBConnection(connectionString);
         dbCon.Connect();
-        string query = String.Format("SELECT user_id, rating, comment FROM rating WHERE movie_id='{0}'", id);
+        string query = $"SELECT user_id, rating, comment FROM rating WHERE movie_id='{id}'";
         var cmd = new MySqlCommand(query, dbCon.Connection);
         var reader = cmd.ExecuteReader();
         while (reader.Read())
-        {
             result.Add(new RatingResponse(new Guid(reader.GetString(0)), reader.GetInt32(1), reader.GetString(2)));
-        }
         cmd.Dispose();
         dbCon.Close();
         return result;
@@ -45,13 +43,11 @@ public class RateService : IRateService
         List<RatingResponse> result = new();
         var dbCon = new DBConnection(connectionString);
         dbCon.Connect();
-        string query = String.Format("SELECT user_id, rating, comment FROM rating WHERE user_id='{0}'", id);
+        string query = $"SELECT user_id, rating, comment FROM rating WHERE user_id='{id}'";
         var cmd = new MySqlCommand(query, dbCon.Connection);
         var reader = cmd.ExecuteReader();
         while (reader.Read())
-        {
             result.Add(new RatingResponse(new Guid(reader.GetString(0)), reader.GetInt32(1), reader.GetString(2)));
-        }
         cmd.Dispose();
         dbCon.Close();
         return result;
@@ -63,7 +59,7 @@ public class RateService : IRateService
             throw new Exception("Null Connection String.");
         var dbCon = new DBConnection(connectionString);
         dbCon.Connect();
-        string query = String.Format("DELETE FROM rating WHERE movie_id='{0}' AND user_id='{1}'", rating.MovieId, rating.UserId);
+        string query = $"DELETE FROM rating WHERE movie_id='{rating.MovieId}' AND user_id='{rating.UserId}'";
         var cmd = new MySqlCommand(query, dbCon.Connection);
         var reader = cmd.ExecuteReader();
         cmd.Dispose();
@@ -76,7 +72,7 @@ public class RateService : IRateService
             throw new Exception("Null Connection String.");
         var dbCon = new DBConnection(connectionString);
         dbCon.Connect();
-        string query = String.Format("SELECT * FROM rating WHERE movie_id='{0}' AND user_id='{1}'", rating.MovieId, rating.UserId);
+        string query = $"SELECT * FROM rating WHERE movie_id='{rating.MovieId}' AND user_id='{rating.UserId}'";
         var cmd = new MySqlCommand(query, dbCon.Connection);
         bool result = cmd.ExecuteReader().HasRows;
         cmd.Dispose();

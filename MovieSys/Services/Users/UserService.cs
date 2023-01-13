@@ -15,7 +15,7 @@ public class UserService : IUserService
         var dbCon = new DBConnection(connectionString);
         dbCon.Connect();
         string password = BC.HashPassword(user.Password);
-        string query = string.Format("INSERT INTO `user` VALUES('{0}', '{1}', '{2}', '{3}');", user.Id, user.Email, user.Username, password);
+        string query = $"INSERT INTO `user` VALUES('{user.Id}', '{user.Email}', '{user.Username}', '{password}')";
         var cmd = new MySqlCommand(query, dbCon.Connection);
         cmd.ExecuteNonQuery();
         cmd.Dispose();
@@ -28,13 +28,11 @@ public class UserService : IUserService
             throw new Exception("Null Connection String.");
         var dbCon = new DBConnection(connectionString);
         dbCon.Connect();
-        string query = string.Format("SELECT * FROM `user` WHERE id='{0}'", id);
+        string query = $"SELECT * FROM `user` WHERE id='{id}'";
         var cmd = new MySqlCommand(query, dbCon.Connection);
         var reader = cmd.ExecuteReader();
         while (reader.Read())
-        {
             return new UserResponse(new Guid(reader.GetString(0)), reader.GetString(1), reader.GetString(2));
-        }
         cmd.Dispose();
         dbCon.Close();
         return null;
@@ -46,7 +44,7 @@ public class UserService : IUserService
             throw new Exception("Null Connection String.");
         var dbCon = new DBConnection(connectionString);
         dbCon.Connect();
-        string query = String.Format("DELETE FROM `user` WHERE id='{0}'", id);
+        string query = $"DELETE FROM `user` WHERE id='{id}'";
         var cmd = new MySqlCommand(query, dbCon.Connection);
         var reader = cmd.ExecuteReader();
         cmd.Dispose();

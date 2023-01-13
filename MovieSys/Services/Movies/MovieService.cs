@@ -13,7 +13,7 @@ public class MovieService : IMovieService
             throw new Exception("Null Connection String.");
         var dbCon = new DBConnection(connectionString);
         dbCon.Connect();
-        string query = String.Format("INSERT INTO movie VALUES('{0}','{1}','{2}','{3}');", movie.Id, movie.Name, movie.Director, movie.Release.Year + "-" + movie.Release.Month + "-" + movie.Release.Day);
+        string query = $"INSERT INTO movie VALUES('{movie.Id}','{movie.Name}','{movie.Director}','{movie.Release.Year + "-" + movie.Release.Month + "-" + movie.Release.Day}')";
         var cmd = new MySqlCommand(query, dbCon.Connection);
         cmd.ExecuteNonQuery();
         cmd.Dispose();
@@ -26,18 +26,16 @@ public class MovieService : IMovieService
             throw new Exception("Null Connection String.");
         var dbCon = new DBConnection(connectionString);
         dbCon.Connect();
-        string query = String.Format("SELECT * FROM movie WHERE id='{0}'", id);
+        string query = $"SELECT * FROM movie WHERE id='{id}'";
         var cmd = new MySqlCommand(query, dbCon.Connection);
         var reader = cmd.ExecuteReader();
         while (reader.Read())
-        {
             return new MovieResponse(new Guid(reader.GetString(0)),
                                      reader.GetString(1),
                                      reader.GetString(2),
                                      new DateOnly(Int32.Parse(reader.GetString(3).Substring(6, 4)),
                                                   Int32.Parse(reader.GetString(3).Substring(0, 2)),
                                                   Int32.Parse(reader.GetString(3).Substring(3, 2))));
-        }
         cmd.Dispose();
         dbCon.Close();
         return null;
@@ -49,7 +47,7 @@ public class MovieService : IMovieService
             throw new Exception("Null Connection String.");
         var dbCon = new DBConnection(connectionString);
         dbCon.Connect();
-        string query = String.Format("DELETE FROM movie WHERE id='{0}'", id);
+        string query = $"DELETE FROM movie WHERE id='{id}'";
         var cmd = new MySqlCommand(query, dbCon.Connection);
         var reader = cmd.ExecuteReader();
         cmd.Dispose();
