@@ -51,7 +51,7 @@ jobs:
       - name: Install pip package
         run: pip install pymysql
       - name: Run Python script
-        working-directory: ./MySQL
+        working-directory: MySQL
         run: python init.py
       - uses: actions/checkout@v3
       - name: Setup .NET
