@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddScoped<ICastService, CastService>();
     builder.Services.AddScoped<IRateService, RateService>();
     builder.Services.AddScoped<ITopicService, TopicService>();
+    builder.Services.AddScoped<IWatchService, WatchService>();
 }
 
 var app = builder.Build();
