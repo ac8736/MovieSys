@@ -6,7 +6,7 @@ name: .NET
 env:
   MYSQL_DATABASE: movie_sys
   MYSQL_USER: root
-  MYSQL_PASSWORD:
+  MYSQL_PASSWORD: password
   MYSQL_HOST: mysql-master
   NODE_ENV: test
 
