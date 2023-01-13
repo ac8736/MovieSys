@@ -38,3 +38,11 @@ CREATE TABLE topic(
     PRIMARY KEY (movie_id, topic),
     FOREIGN KEY (movie_id) REFERENCES Movie(id)
 );
+
+CREATE TABLE watched(
+    movie_id CHAR(36) not null,
+    user_id char(36) not null,
+    PRIMARY KEY (movie_id, user_id),
+    FOREIGN KEY (movie_id) REFERENCES movie(id),
+    FOREIGN KEY (user_id) REFERENCES `user`(id)
+);
