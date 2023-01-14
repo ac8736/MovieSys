@@ -37,3 +37,4 @@ public class UserServiceTest
             Assert.That(foundUser.Id, Is.EqualTo(response.Id));
     }
 }
+
