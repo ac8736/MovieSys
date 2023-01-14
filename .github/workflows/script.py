@@ -1,24 +1,27 @@
 import pymysql.cursors
 
 def create_connection():
-    return pymysql.connect(host='127.0.0.1',
+    return pymysql.connect(host='localhost',
                         user='root',
-                        password='password',
-                        db='movie_sys',
+                        password='root',
                         charset='utf8mb4',
                         cursorclass=pymysql.cursors.DictCursor)
 
 conn = create_connection()
 cursor = conn.cursor()
-query = "CREATE TABLE movies(id CHAR(36) not null,`name` varchar(255) not null,director varchar(255) not null,release_date date not null,PRIMARY KEY (id))"
+query = "CREATE DATABASE movie_sys;"
+cursor.execute(query)
+query = "use movie_sys"
+cursor.execute(query)
+query = "CREATE TABLE movie(id CHAR(36) not null,`name` varchar(255) not null,director varchar(255) not null,release_date date not null,PRIMARY KEY (id))"
 cursor.execute(query)
 query = "CREATE TABLE `user`(id CHAR(36) not null,email varchar(255) not null,`username` varchar(255) not null,`password` varchar(255) not null,PRIMARY KEY (id, email))"
 cursor.execute(query)
 query = "CREATE TABLE movie_cast(movie_id char(36) not null,actor_name varchar(255) not null,`role` varchar(255) not null,PRIMARY KEY (movie_id, actor_name, `role`),FOREIGN KEY (movie_id) REFERENCES movie(id))"
 cursor.execute(query)
-query = "CREATE TABLE rating(movie_id CHAR(36) not null,user_id char(36) not null,rating int not null,comment varchar(255) not null,PRIMARY KEY (movie_id, email),FOREIGN KEY (movie_id) REFERENCES movie(id),FOREIGN KEY (user_id) REFERENCES `user`(id))"
+query = "CREATE TABLE rating(movie_id CHAR(36) not null,user_id char(36) not null,rating int not null,comment varchar(255) not null,PRIMARY KEY (movie_id, user_id),FOREIGN KEY (movie_id) REFERENCES movie(id),FOREIGN KEY (user_id) REFERENCES `user`(id))"
 cursor.execute(query)
-query = "CREATE TABLE topic(movie_id CHAR(36) not null,topic varchar(255) not null,PRIMARY KEY (movie_id, topic),FOREIGN KEY (movie_id) REFERENCES Movie(id))"
+query = "CREATE TABLE topic(movie_id CHAR(36) not null,topic varchar(255) not null,PRIMARY KEY (movie_id, topic),FOREIGN KEY (movie_id) REFERENCES movie(id))"
 cursor.execute(query)
 query = "CREATE TABLE watched(movie_id CHAR(36) not null,user_id char(36) not null,PRIMARY KEY (movie_id, user_id),FOREIGN KEY (movie_id) REFERENCES movie(id),FOREIGN KEY (user_id) REFERENCES `user`(id))"
 cursor.execute(query)
