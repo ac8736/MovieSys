@@ -30,12 +30,15 @@ public class MovieService : IMovieService
         var cmd = new MySqlCommand(query, dbCon.Connection);
         var reader = cmd.ExecuteReader();
         while (reader.Read())
+        {
+            string[] date = reader.GetString(3).Split("/");
             return new MovieResponse(new Guid(reader.GetString(0)),
-                                     reader.GetString(1),
-                                     reader.GetString(2),
-                                     new DateOnly(Int32.Parse(reader.GetString(3).Substring(6, 4)),
-                                                  Int32.Parse(reader.GetString(3).Substring(0, 2)),
-                                                  Int32.Parse(reader.GetString(3).Substring(3, 2))));
+                                    reader.GetString(1),
+                                    reader.GetString(2),
+                                    new DateOnly(Int32.Parse(date[2].Substring(0, 4)),
+                                                    Int32.Parse(date[0]),
+                                                    Int32.Parse(date[1])));
+        }
         cmd.Dispose();
         dbCon.Close();
         return null;
