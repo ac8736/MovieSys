@@ -4,6 +4,8 @@
 ## Source code for REST API from scratch using .NET 6.
 
 ### Overview
+![example workflow](https://github.com/ac8736/MovieSys/actions/workflows/dotnet.yml/badge.svg)
+
 This API allows for movies to be created and stored in a database with their release date, director, and topics/genres it falls under. Users can be registered to add one rating for each movie they choose, allowing for a numeric rating and a short comment.
 
 <div align="center">
