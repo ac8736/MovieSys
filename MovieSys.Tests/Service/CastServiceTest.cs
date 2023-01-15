@@ -49,16 +49,22 @@ public class CastServiceTest
     public void CreateCast_Works()
     {
         Casts cast = new(new Guid("9a2adc60-a772-4495-8290-d39e653a0228"), "Zoe Saldana", "Neytiri");
+        CastRequest request = new CastRequest(new Guid("9a2adc60-a772-4495-8290-d39e653a0228"), "Zoe Saldana", "Neytiri");
 
         _castService.CreateCast(cast, _configuration["ConnectionStrings:Default"]);
-        bool found = _castService.FindCastMember(new CastRequest(new Guid("9a2adc60-a772-4495-8290-d39e653a0228"), "Zoe Saldana", "Neytiri"), _configuration["ConnectionStrings:Default"]);
+        bool found = _castService.FindCastMember(request, _configuration["ConnectionStrings:Default"]);
 
         Assert.IsTrue(found);
     }
 
-    // [Test]
-    // public void DeleteCastMember_Work()
-    // {
+    [Test]
+    public void DeleteCastMember_Work()
+    {
+        CastRequest request = new(new Guid("9a2adc60-a772-4495-8290-d39e653a0228"), "Zoe Saldana", "Neytiri");
 
-    // }
+        _castService.DeleteCastMember(request, _configuration["ConnectionStrings:Default"]);
+        bool found = _castService.FindCastMember(request, _configuration["ConnectionStrings:Default"]);
+
+        Assert.IsFalse(found);
+    }
 }
