@@ -32,8 +32,6 @@ query = "INSERT INTO movie VALUES('9a2adc60-a772-4495-8290-d39e653a0228', 'Avata
 cursor.execute(query)
 query = "INSERT INTO movie_cast VALUES('9a2adc60-a772-4495-8290-d39e653a0228', 'Sam Worthington', 'Jake Sully')"
 cursor.execute(query)
-query = "INSERT INTO rating VALUES('9a2adc60-a772-4495-8290-d39e653a0228', '682671f8-00f1-4155-8416-8b4f3ff97126', 5, 'Great movie')"
-cursor.execute(query)
 query = "INSERT INTO topic VALUES('9a2adc60-a772-4495-8290-d39e653a0228', 'Sci-Fi')"
 cursor.execute(query)
 query = "INSERT INTO watched VALUES('9a2adc60-a772-4495-8290-d39e653a0228', '682671f8-00f1-4155-8416-8b4f3ff97126')"
